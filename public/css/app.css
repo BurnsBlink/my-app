@@ -1,19 +1,41 @@
 body {
   background: #363c3f;
   color: #ffffff;
-  font-family: 'thunder-lord';
+  font-family: 'modithorson';
+}
+
+a {
+  color: #3F26BF;
+  font-size: 20px;
+}
+
+a:hover {
+  color: black;
 }
 
 .title {
+  background: url('https://i.imgur.com/yxk7Npc.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0px -30px;
   text-align: center;
-  font-family: 'thunder-lord';
+  color: #3F26BF;
+  text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+  font-family: 'modithorson';
+  font-size: 120px;
 }
 
 .header {
-  background: lightgrey;
-  color: darkred;
+  padding-left: 10px;
+  background: url('https://images.freecreatives.com/wp-content/uploads/2015/10/scratched-texture-on-white.jpg');
+  border-radius: 8%;
+  font-weight: bolder;
 }
 
 .content {
   background: lightblue;
+}
+
+ul {
+  list-style-type: none;
 }
