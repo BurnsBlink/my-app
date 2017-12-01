@@ -1,0 +1,19 @@
+body {
+  background: #363c3f;
+  color: #ffffff;
+  font-family: 'thunder-lord';
+}
+
+.title {
+  text-align: center;
+  font-family: 'thunder-lord';
+}
+
+.header {
+  background: lightgrey;
+  color: darkred;
+}
+
+.content {
+  background: lightblue;
+}
