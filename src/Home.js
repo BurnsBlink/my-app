@@ -1,8 +1,19 @@
 import React, { Component } from "react";
-import { Document } from 'react-pdf';
+import { Document, Page } from 'react-pdf';
 
 class Home extends React.Component {
+  state = {
+    numPages: null,
+    pageNumber: 1,
+  }
+
+  onDocumentLoad = ({ numPages }) => {
+    this.setState({ numPages });
+  }
+
   render() {
+    const { pageNumber, numPages } = this.state;
+
     return (
       <div className="f">
         <div className="header">
@@ -20,8 +31,13 @@ class Home extends React.Component {
           </div>
         </div>
 
-        <Document file="resume.pdf" />
-
+        <Document
+          className="document"
+          file="resume.pdf"
+          onLoadSuccess={this.onDocumentLoad}
+        >
+          <Page pageNumber={pageNumber} />
+        </Document>
       </div>
     );
   }
