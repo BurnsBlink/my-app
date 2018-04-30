@@ -1,0 +1,16 @@
+
+        <div className="projects-holder">
+          <h1 className="text-center columns project-title">{"Here are some projects that I've worked on"}</h1>
+        </div>
+
+
+        .projects-holder {
+          background: #0A1128;
+          color: var(--main-white);
+          overflow: hidden;
+          padding: 50px 0px;
+        }
+
+        .project-title {
+          font-family: 'Electrolize', sans-serif;
+        }

@@ -1,21 +1,50 @@
 import React, { Component } from "react";
 import { Document, Page } from 'react-pdf';
 
-class Home extends React.Component {
-  state = {
-    numPages: null,
-    pageNumber: 1,
+class Home extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      numPages: null,
+      pageNumber: 1,
+      showDoc: null,
+    }
+    this.handleShowClick = this.handleShowClick.bind(this);
   }
 
   onDocumentLoad = ({ numPages }) => {
     this.setState({ numPages });
   }
 
+  handleShowClick(event){
+    if (this.state.showDoc === event) {
+      this.setState({ showDoc: null})
+    } else {
+      this.setState({ showDoc: true })
+    }
+  }
+
+
   render() {
     const { pageNumber, numPages } = this.state;
 
+    let className, id, msg
+    if (this.state.showDoc === true){
+      className = "doc-show"
+      id = "button-hide"
+      msg = "*** Click to hide my Resume ***"
+    } else {
+      className = "doc-hide"
+      id = "button-show"
+      msg = "*** Click to see my Resume ***"
+    }
+
+    let onClick = () => {
+      this.handleShowClick(true)
+    }
+
     return (
-      <div className="f">
+      <div>
         <div className="header">
           <img className="my-face" src={require('./images/sb1.png')} alt=""/>
         </div>
@@ -31,11 +60,11 @@ class Home extends React.Component {
           </div>
         </div>
 
-        <Document
-          className="document"
-          file="resume.pdf"
-          onLoadSuccess={this.onDocumentLoad}
-        >
+        <p onClick={onClick} className="large-12 text-center resume-button" id={id}>
+          {msg}
+        </p>
+
+        <Document className={className} file="resume.pdf" onLoadSuccess={this.onDocumentLoad}>
           <Page pageNumber={pageNumber} />
         </Document>
       </div>
