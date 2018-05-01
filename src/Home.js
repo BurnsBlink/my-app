@@ -67,6 +67,13 @@ class Home extends Component {
         <Document className={className} file="resume.pdf" onLoadSuccess={this.onDocumentLoad}>
           <Page pageNumber={pageNumber} />
         </Document>
+
+        <div className="projects-holder">
+          <h1 className="text-center columns project-title">{"Here are some projects that I've worked on"}</h1>
+
+          <a className="project-path" href="https://house-of-vikings.herokuapp.com" target="_blank" rel="noopener noreferrer"> <img alt="HOV" src={require('./images/hov.png')} height="250"/> </a>
+        </div>
+
       </div>
     );
   }
