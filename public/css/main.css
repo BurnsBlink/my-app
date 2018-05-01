@@ -2,13 +2,16 @@
 
 :root {
     --main-blue: #2B4E72;
-    --main-red: #FB0C06;
+    --2nd-blue: #2790B0;
+    --main-red: #E32D40;
     --main-yellow: #FFC52C;
     --main-white: #f0f0f0;
     --main-grey: #4E4D4A;
-    --main-purple: #5F5AA2;
     --dark-grey: #353432;
-    --2nd-blue: #2790B0;
+    --main-purple: #5F5AA2;
+    --main-orange: #E47C5D;
+    --main-green: #59B390;
+    --2nd-green: #CAFF42;
 }
 
 body {
@@ -36,12 +39,12 @@ body {
 }
 
 .name, .number, .email, .linkedin, .github {
-  color: var(--main-white);
   font-family: 'Electrolize', sans-serif;
+  color: var(--main-white);
 }
 
 .name {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
   font-size: 4em;
   text-shadow: 0px 2px 0px var(--2nd-blue),
@@ -79,34 +82,59 @@ body {
 }
 
 .resume-button {
-  margin: auto;
-  padding-top: 5px;
-  color: var(--main-purple);
+  color: var(--main-red);
   font-family: 'Electrolize', sans-serif;
   font-size: x-large;
+  margin: auto;
+  padding-top: 5px;
 }
 
 #button-hide {
-  background: var(--main-purple);
+  background: var(--main-red);
   color: var(--main-white);
 }
 
 .projects-holder {
-  background: #0A1128;
+  background: var(--main-green);
   color: var(--main-white);
   overflow: hidden;
   padding: 50px 0px;
 }
 
 .project-title {
-  margin-top: -30px;
-  margin-bottom: 30px;
   font-family: 'Electrolize', sans-serif;
+  margin-top: -30px;
+  margin-bottom: 10px;
 }
 
-.project-path {
+.project-holder {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  height: 0%;
+}
+
+.slide-container {
+  background: var(--main-green);
+  margin-top: -30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 40px;
+}
+
+.project-path {
+  font-family: 'Electrolize', sans-serif;
+  color: var(--main-yellow);
+  font-size: 22px;
+  border-right: 1px solid black;
+  padding: 0px 30px;
+}
+
+.project-path:last-child {
+  border: none;
+}
+
+.project-path:hover{
+  color: black;
 }

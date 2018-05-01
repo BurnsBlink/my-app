@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Document, Page } from 'react-pdf';
+import { Document, Page } from "react-pdf";
+import { Fade } from "react-slideshow-image";
 
 class Home extends Component {
   constructor(props){
@@ -24,9 +25,21 @@ class Home extends Component {
     }
   }
 
-
   render() {
     const { pageNumber, numPages } = this.state;
+    const links = [
+      "https://flipdog.herokuapp.com",
+      "https://house-of-vikings.herokuapp.com",
+      "https://ninetofiveguys.herokuapp.com",
+      "https://biodiversity.herokuapp.com"
+    ];
+
+    const images = [
+      "flipdog.png",
+      "hov.png",
+      "925.png",
+      "biod.png"
+    ];
 
     let className, id, msg
     if (this.state.showDoc === true){
@@ -46,7 +59,7 @@ class Home extends Component {
     return (
       <div>
         <div className="header">
-          <img className="my-face" src={require('./images/sb1.png')} alt=""/>
+          <img className="my-face" src={require("./images/sb1.png")} alt=""/>
         </div>
 
         <div className="contact-holder">
@@ -68,10 +81,23 @@ class Home extends Component {
           <Page pageNumber={pageNumber} />
         </Document>
 
-        <div className="projects-holder">
-          <h1 className="text-center columns project-title">{"Here are some projects that I've worked on"}</h1>
+        <div className="text-center projects-holder">
+          <h1 className="columns project-title">{"Here are some projects that I've worked on"}</h1>
+          <a className="project-path" href="https://flipdog.herokuapp.com" target="_blank" rel="noopener noreferrer">Flipdog</a>
+          <a className="project-path" href="https://house-of-vikings.herokuapp.com" target="_blank" rel="noopener noreferrer">House of Vikings</a>
+          <a className="project-path" href="https://ninetofiveguys.herokuapp.com" target="_blank" rel="noopener noreferrer">9 to 5 Guys</a>
+          <a className="project-path" href="https://biodiversity.herokuapp.com" target="_blank" rel="noopener noreferrer">Biodiversity Lab</a>
+        </div>
 
-          <a className="project-path" href="https://house-of-vikings.herokuapp.com" target="_blank" rel="noopener noreferrer"> <img alt="HOV" src={require('./images/hov.png')} height="250"/> </a>
+        <div className="slide-container">
+          <span className="project-holder">
+            <Fade
+              images={images}
+              duration={1500}
+              transitionDuration={1000}
+              direction="in"
+              />
+          </span>
         </div>
 
       </div>
