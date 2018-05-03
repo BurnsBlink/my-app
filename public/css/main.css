@@ -33,7 +33,7 @@ body {
   margin-right: auto;
 }
 
-.month, .day, .year {
+.month, .day, .year, .time {
   position: absolute;
   font-family: 'Fredoka One', cursive;
   color: var(--main-green);
@@ -55,6 +55,12 @@ body {
   top: 34px;
   left: 80px;
   transform: rotate(270deg);
+  font-size: 1.5em;
+}
+
+.time {
+  top: 20px;
+  right: 20px;
   font-size: 1.5em;
 }
 

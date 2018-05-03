@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
 import { Fade } from "react-slideshow-image";
+import Moment from 'react-moment';
 
 class Home extends Component {
   constructor(props){
@@ -69,6 +70,8 @@ class Home extends Component {
           <p className="month">{month}</p>
           <p className="day">{day}</p>
           <p className="year">{year}</p>
+          <Moment className="time" format="hh:mm:ss" interval={500}>
+          </Moment>
         </div>
 
         <div className="contact-holder">
