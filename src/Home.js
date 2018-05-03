@@ -76,29 +76,36 @@ class Home extends Component {
 
         <div className="contact-holder">
           <h1 className="large-6 medium-6 small-12 text-center columns name">Sam Burns</h1>
-
-          <div className="large-6 medium-6 small-12 text-center columns">
+          <span className="large-6 medium-6 small-12 text-center columns">
             <p className="number">607-592-9072</p>
             <p className="email">samuel.burns.25@gmail.com</p>
-            <a className="linkedin" href="https://www.linkedin.com/in/samuel-burns/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br /><br />
-            <a className="github" href="https://github.com/BurnsBlink" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
+            <p><a className="linkedin" href="https://www.linkedin.com/in/samuel-burns/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a className="github" href="https://github.com/BurnsBlink" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+          </span>
         </div>
 
-        <p onClick={onClick} className="large-12 text-center resume-button" id={id}>
-          {msg}
-        </p>
+        <div className="row my-bio">
+          <p className="columns bio-text">&emsp;Born in Pennsylvania, raised in California, grew up in New York, educated in Pennsylvania, career aspirations in Massachusetts, settled in Maryland.  Switching careers from a business/finance background to the world of Web Development was the most challenging thing I’ve done in my life.  It has also been one of my best decisions I could’ve ever made.<br/><br/>
+          &emsp;I’m a huge comic book fan (obviously *TODO link here*), love just about any sport, and also like to read up on many kinds of tech.</p>
+        </div>
 
-        <Document className={className} file="resume.pdf" onLoadSuccess={this.onDocumentLoad}>
-          <Page pageNumber={pageNumber} />
-        </Document>
+        <div>
+          <p onClick={onClick} className="large-12 text-center resume-button" id={id}>
+            {msg}
+          </p>
+          <Document className={className} file="resume.pdf" onLoadSuccess={this.onDocumentLoad}>
+            <Page pageNumber={pageNumber} />
+          </Document>
+        </div>
 
         <div className="text-center projects-holder">
           <h1 className="columns project-title">{"Here are some projects that I've worked on"}</h1>
-          <a className="project-path" href="https://flipdog.herokuapp.com" target="_blank" rel="noopener noreferrer">Flipdog</a>
-          <a className="project-path" href="https://house-of-vikings.herokuapp.com" target="_blank" rel="noopener noreferrer">House of Vikings</a>
-          <a className="project-path" href="https://ninetofiveguys.herokuapp.com" target="_blank" rel="noopener noreferrer">9 to 5 Guys</a>
-          <a className="project-path" href="https://biodiversity.herokuapp.com" target="_blank" rel="noopener noreferrer">Biodiversity Lab</a>
+          <span className="">
+            <a className="project-path" href="https://flipdog.herokuapp.com" target="_blank" rel="noopener noreferrer">Flipdog</a>
+            <a className="project-path" href="https://house-of-vikings.herokuapp.com" target="_blank" rel="noopener noreferrer">House of Vikings</a>
+            <a className="project-path" href="https://ninetofiveguys.herokuapp.com" target="_blank" rel="noopener noreferrer">9 to 5 Guys</a>
+            <a className="project-path" href="https://biodiversity.herokuapp.com" target="_blank" rel="noopener noreferrer">Biodiversity Lab</a>
+          </span>
         </div>
 
         <div className="slide-container">
@@ -118,3 +125,5 @@ class Home extends Component {
 }
 
 export default Home
+
+// <img className="large-3 medium-4 small-12 text-center columns bio-img" src="gambit.png" alt=""></img>
