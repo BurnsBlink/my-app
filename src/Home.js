@@ -13,6 +13,12 @@ class Home extends Component {
     this.handleShowClick = this.handleShowClick.bind(this);
   }
 
+  day_of_the_month = (d) => {
+    let days = d.getDate();
+    if(days > 10 ) return days;
+    return "0" + days;
+  }
+
   onDocumentLoad = ({ numPages }) => {
     this.setState({ numPages });
   }
@@ -27,19 +33,19 @@ class Home extends Component {
 
   render() {
     const { pageNumber, numPages } = this.state;
-    const links = [
-      "https://flipdog.herokuapp.com",
-      "https://house-of-vikings.herokuapp.com",
-      "https://ninetofiveguys.herokuapp.com",
-      "https://biodiversity.herokuapp.com"
-    ];
-
     const images = [
       "flipdog.png",
       "hov.png",
       "925.png",
       "biod.png"
     ];
+
+    let today = new Date();
+    let day = this.day_of_the_month(today);
+    let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    let month = monthNames[new Date().getMonth()];
+    let year = today.getFullYear();
 
     let className, id, msg
     if (this.state.showDoc === true){
@@ -60,6 +66,9 @@ class Home extends Component {
       <div>
         <div className="header">
           <img className="my-face" src={require("./images/sb1.png")} alt=""/>
+          <p className="month">{month}</p>
+          <p className="day">{day}</p>
+          <p className="year">{year}</p>
         </div>
 
         <div className="contact-holder">
