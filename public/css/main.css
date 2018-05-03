@@ -4,6 +4,7 @@
 :root {
     --main-blue: #2B4E72;
     --2nd-blue: #2790B0;
+    --3rd-blue: #1DBFCA;
     --main-red: #E32D40;
     --main-yellow: #FFC52C;
     --main-white: #f0f0f0;
@@ -13,12 +14,16 @@
     --main-orange: #E47C5D;
     --main-green: #59B390;
     --2nd-green: #BDEB07;
+    --main-pink: #F31578;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Electrolize', sans-serif;
+}
+
+br {
 }
 
 .header {
@@ -67,11 +72,10 @@ body {
 .contact-holder {
   background: var(--main-blue);
   overflow: hidden;
-  padding: 10px 0px;
+  padding-top: 10px;
 }
 
 .name, .number, .email, .linkedin, .github {
-  font-family: 'Electrolize', sans-serif;
   color: var(--main-white);
 }
 
@@ -103,6 +107,23 @@ body {
   font-size: x-large;
 }
 
+.my-bio {
+  background: white;
+  padding: 10px 0px;
+}
+
+.bio-text {
+}
+
+.bio-img {
+  height: 350px;
+  width: 193px;
+}
+
+.bio-img:hover {
+  content: url('../constants/captain.png');
+}
+
 .doc-show {
   display: flex;
   flex-direction: column;
@@ -116,7 +137,6 @@ body {
 .resume-button {
   background: var(--main-white);
   color: var(--main-red);
-  font-family: 'Electrolize', sans-serif;
   font-size: x-large;
   margin: auto;
   padding-top: 5px;
@@ -143,7 +163,6 @@ body {
 }
 
 .project-title {
-  font-family: 'Electrolize', sans-serif;
   margin-top: -30px;
   margin-bottom: 10px;
 }
@@ -165,15 +184,19 @@ body {
 }
 
 .project-path {
-  font-family: 'Electrolize', sans-serif;
   color: var(--main-yellow);
   font-size: 22px;
   border-right: 1px solid black;
   padding: 0px 30px;
 }
 
+.project-path:first-child {
+  padding-left: 0px;
+}
+
 .project-path:last-child {
   border: none;
+  padding-right: 0px;
 }
 
 .project-path:hover{
