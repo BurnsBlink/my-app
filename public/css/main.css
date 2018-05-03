@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Electrolize');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 :root {
     --main-blue: #2B4E72;
@@ -11,7 +12,7 @@
     --main-purple: #5F5AA2;
     --main-orange: #E47C5D;
     --main-green: #59B390;
-    --2nd-green: #CAFF42;
+    --2nd-green: #BDEB07;
 }
 
 body {
@@ -32,10 +33,35 @@ body {
   margin-right: auto;
 }
 
+.month, .day, .year {
+  position: absolute;
+  font-family: 'Fredoka One', cursive;
+  color: var(--main-green);
+}
+
+.month {
+  top: 15px;
+  left: 25px;
+  font-size: 1.9em;
+}
+
+.day {
+  top: 45px;
+  left: 40px;
+  font-size: 1.9em;
+}
+
+.year {
+  top: 34px;
+  left: 80px;
+  transform: rotate(270deg);
+  font-size: 1.5em;
+}
+
 .contact-holder {
   background: var(--main-blue);
   overflow: hidden;
-  padding: 50px 0px;
+  padding: 10px 0px;
 }
 
 .name, .number, .email, .linkedin, .github {
@@ -58,12 +84,12 @@ body {
 }
 
 .github:hover {
-  color: var(--main-red);
+  color: black;
   cursor: url('http://www.rw-designer.com/icon-image/5183-32x32x32.png'), default;
 }
 
 .linkedin:hover {
-  color: var(--main-red);
+  color: black;
   cursor: url('http://www.rw-designer.com/cursor-view/63460.png'), default;
 }
 
@@ -82,6 +108,7 @@ body {
 }
 
 .resume-button {
+  background: var(--main-white);
   color: var(--main-red);
   font-family: 'Electrolize', sans-serif;
   font-size: x-large;
@@ -89,9 +116,17 @@ body {
   padding-top: 5px;
 }
 
+.resume-button:hover {
+  cursor: s-resize;
+}
+
 #button-hide {
   background: var(--main-red);
   color: var(--main-white);
+}
+
+#button-hide:hover {
+  cursor: n-resize;
 }
 
 .projects-holder {
