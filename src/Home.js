@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
-import { Fade, Slide } from "react-slideshow-image";
+import { Fade } from "react-slideshow-image";
 import Moment from 'react-moment';
+import SlideShow from 'react-image-show';
 
 class Home extends Component {
   constructor(props){
@@ -129,6 +130,21 @@ class Home extends Component {
               />
           </span>
         </div>
+
+        <div className="logo-container">
+          <h2 className="text-center logo-title">{"I also love to build logos in my free time"}</h2>
+          <SlideShow
+            images={logoImages}
+            width="520px"
+            imagesWidth="500px"
+            imagesHeight="250px"
+            imagesHeightMobile="56vw"
+            thumbnailsWidth="520px"
+            thumbnailsHeight="12vw"
+            infinite="true"
+            indicators thumbnails fixedImagesHeight
+          />
+        </div>
       </div>
     );
   }
@@ -137,14 +153,3 @@ class Home extends Component {
 export default Home
 
 // <img className="large-3 medium-4 small-12 text-center columns bio-img" src="/constants/gambit.png" alt=""></img>
-// <div className="logo-container">
-//   <span className="logo-holder">
-//     <Slide
-//       className="logo"
-//       images={logoImages}
-//       duration={1500}
-//       transitionDuration={1000}
-//       direction="in"
-//       />
-//   </span>
-// </div>
