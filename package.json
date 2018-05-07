@@ -6,6 +6,7 @@
     "moment": "^2.22.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-image-show": "^0.2.4",
     "react-moment": "^0.7.0",
     "react-pdf": "^3.0.4",
     "react-router-dom": "^4.2.2",

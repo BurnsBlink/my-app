@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
 import { Fade } from "react-slideshow-image";
 import Moment from 'react-moment';
+import SlideShow from 'react-image-show';
 
 class Home extends Component {
   constructor(props){
@@ -34,11 +35,22 @@ class Home extends Component {
 
   render() {
     const { pageNumber, numPages } = this.state;
-    const images = [
-      "constants/flipdog.png",
-      "constants/hov.png",
-      "constants/925.png",
-      "constants/biod.png"
+    const projectImages = [
+      "constants/projects/flipdog.png",
+      "constants/projects/hov.png",
+      "constants/projects/925.png",
+      "constants/projects/biod.png"
+    ];
+    const logoImages = [
+      "constants/logos/BBsite.jpg",
+      "constants/logos/hov.jpg",
+      "constants/logos/flipdog.jpg",
+      "constants/logos/guys.jpg",
+      "constants/logos/Lakewood.jpg",
+      "constants/logos/Media.jpg",
+      "constants/logos/mylogo.jpg",
+      "constants/logos/Shield.jpg",
+      "constants/logos/Thunderlogo.jpg"
     ];
 
     let today = new Date();
@@ -108,10 +120,10 @@ class Home extends Component {
           </span>
         </div>
 
-        <div className="slide-container">
-          <span className="project-holder">
+        <div className="project-container">
+          <span className="project-to-images">
             <Fade
-              images={images}
+              images={projectImages}
               duration={1500}
               transitionDuration={1000}
               direction="in"
@@ -119,6 +131,20 @@ class Home extends Component {
           </span>
         </div>
 
+        <div className="logo-container">
+          <h2 className="text-center logo-title">{"I also love to build logos in my free time"}</h2>
+          <SlideShow
+            images={logoImages}
+            width="520px"
+            imagesWidth="500px"
+            imagesHeight="250px"
+            imagesHeightMobile="56vw"
+            thumbnailsWidth="520px"
+            thumbnailsHeight="12vw"
+            infinite="true"
+            indicators thumbnails fixedImagesHeight
+          />
+        </div>
       </div>
     );
   }

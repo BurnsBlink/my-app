@@ -165,11 +165,12 @@ p {
 }
 
 .project-title {
+  font-family: 'Electrolize', sans-serif;
   margin-top: -30px;
   margin-bottom: 10px;
 }
 
-.project-holder {
+.project-to-images {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -177,12 +178,12 @@ p {
   height: 0%;
 }
 
-.slide-container {
+.project-container {
   background: var(--main-green);
   margin-top: -30px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 
 .project-path {
@@ -203,4 +204,16 @@ p {
 
 .project-path:hover{
   color: black;
+}
+
+.logo-container {
+  background: url('../constants/mainblack.png');
+  padding-bottom: 40px;
+}
+
+.logo-title {
+  font-family: 'Electrolize', sans-serif;
+  color: white;
+  margin-top: -30px;
+  margin-bottom: 10px;
 }
