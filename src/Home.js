@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Document, Page } from "react-pdf";
-import { Fade } from "react-slideshow-image";
+import { Fade, Slide } from "react-slideshow-image";
 import Moment from 'react-moment';
 
 class Home extends Component {
@@ -34,11 +34,22 @@ class Home extends Component {
 
   render() {
     const { pageNumber, numPages } = this.state;
-    const images = [
-      "constants/flipdog.png",
-      "constants/hov.png",
-      "constants/925.png",
-      "constants/biod.png"
+    const projectImages = [
+      "constants/projects/flipdog.png",
+      "constants/projects/hov.png",
+      "constants/projects/925.png",
+      "constants/projects/biod.png"
+    ];
+    const logoImages = [
+      "constants/logos/BBsite.jpg",
+      "constants/logos/hov.jpg",
+      "constants/logos/flipdog.jpg",
+      "constants/logos/guys.jpg",
+      "constants/logos/Lakewood.jpg",
+      "constants/logos/Media.jpg",
+      "constants/logos/mylogo.jpg",
+      "constants/logos/Shield.jpg",
+      "constants/logos/Thunderlogo.jpg"
     ];
 
     let today = new Date();
@@ -108,17 +119,16 @@ class Home extends Component {
           </span>
         </div>
 
-        <div className="slide-container">
-          <span className="project-holder">
+        <div className="project-container">
+          <span className="project-to-images">
             <Fade
-              images={images}
+              images={projectImages}
               duration={1500}
               transitionDuration={1000}
               direction="in"
               />
           </span>
         </div>
-
       </div>
     );
   }
@@ -127,3 +137,14 @@ class Home extends Component {
 export default Home
 
 // <img className="large-3 medium-4 small-12 text-center columns bio-img" src="/constants/gambit.png" alt=""></img>
+// <div className="logo-container">
+//   <span className="logo-holder">
+//     <Slide
+//       className="logo"
+//       images={logoImages}
+//       duration={1500}
+//       transitionDuration={1000}
+//       direction="in"
+//       />
+//   </span>
+// </div>
