@@ -4,14 +4,13 @@
 :root {
     --main-blue: #2B4E72;
     --2nd-blue: #2790B0;
-    --3rd-blue: #1DBFCA;
     --main-red: #E32D40;
     --main-yellow: #FFC52C;
     --main-white: #f0f0f0;
     --main-grey: #4E4D4A;
     --dark-grey: #353432;
     --main-purple: #5F5AA2;
-    --main-orange: #E47C5D;
+    --main-orange: #FA4B00;
     --main-green: #59B390;
     --2nd-green: #BDEB07;
     --main-pink: #F31578;
@@ -23,7 +22,8 @@ body {
   font-family: 'Electrolize', sans-serif;
 }
 
-br {
+p {
+    margin: -1px 0px;
 }
 
 .header {
@@ -72,7 +72,7 @@ br {
 .contact-holder {
   background: var(--main-blue);
   overflow: hidden;
-  padding-top: 10px;
+  padding: 10px 0px;
 }
 
 .name, .number, .email, .linkedin, .github {
@@ -83,6 +83,8 @@ br {
   margin-top: 30px;
   margin-bottom: 20px;
   font-size: 4em;
+  font-family: 'Electrolize', sans-serif;
+  font-weight: 900;
   text-shadow: 0px 2px 0px var(--2nd-blue),
                0px 10px 10px #232323,
                0px 20px 2px rgba(0,0,0,0.1),
@@ -95,12 +97,12 @@ br {
 
 .github:hover {
   color: black;
-  cursor: url('http://www.rw-designer.com/icon-image/5183-32x32x32.png'), default;
+  cursor: url('../constants/github.png'), default;
 }
 
 .linkedin:hover {
   color: black;
-  cursor: url('http://www.rw-designer.com/cursor-view/63460.png'), default;
+  cursor: url('../constants/linkedin.png'), default;
 }
 
 .number, .email, .linkedin, .github {

@@ -35,17 +35,17 @@ class Home extends Component {
   render() {
     const { pageNumber, numPages } = this.state;
     const images = [
-      "flipdog.png",
-      "hov.png",
-      "925.png",
-      "biod.png"
+      "constants/flipdog.png",
+      "constants/hov.png",
+      "constants/925.png",
+      "constants/biod.png"
     ];
 
     let today = new Date();
     let day = this.day_of_the_month(today);
     let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let month = monthNames[new Date().getMonth()];
+    let month = monthNames[today.getMonth()];
     let year = today.getFullYear();
 
     let className, id, msg
@@ -126,4 +126,4 @@ class Home extends Component {
 
 export default Home
 
-// <img className="large-3 medium-4 small-12 text-center columns bio-img" src="gambit.png" alt=""></img>
+// <img className="large-3 medium-4 small-12 text-center columns bio-img" src="/constants/gambit.png" alt=""></img>
