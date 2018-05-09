@@ -8,11 +8,14 @@ class Home extends Component {
   constructor(props){
     super(props)
     this.state = {
-      numPages: null,
       pageNumber: 1,
       showDoc: null,
+      theme: 1,
     }
     this.handleShowClick = this.handleShowClick.bind(this);
+    this.handleThemeClick = this.handleThemeClick.bind(this);
+    this.handleThemeDarkClick = this.handleThemeDarkClick.bind(this);
+    this.handleThemeSpringClick = this.handleThemeSpringClick.bind(this);
   }
 
   day_of_the_month = (d) => {
@@ -33,8 +36,20 @@ class Home extends Component {
     }
   }
 
+  handleThemeClick(event){
+    this.setState({ theme: 1 })
+  }
+
+  handleThemeDarkClick(event){
+    this.setState({ theme: 2 })
+  }
+
+  handleThemeSpringClick(event){
+    this.setState({ theme: 3 })
+  }
+
   render() {
-    const { pageNumber, numPages } = this.state;
+    const { pageNumber } = this.state;
     const projectImages = [
       "constants/projects/flipdog.png",
       "constants/projects/hov.png",
@@ -71,22 +86,47 @@ class Home extends Component {
       msg = "*** Click to see my Resume ***"
     }
 
+    let idTheme
+    if (this.state.theme === 2){
+      idTheme = "dark"
+    } else if (this.state.theme === 3) {
+      idTheme = "spring"
+    } else {
+      idTheme = ""
+    }
+
     let onClick = () => {
       this.handleShowClick(true)
     }
+
+    let onClickTheme = () => {
+      this.handleThemeClick(true)
+    }
+
+    let onClickThemeDark = () => {
+      this.handleThemeDarkClick(true)
+    }
+
+    let onClickThemeSpring = () => {
+      this.handleThemeSpringClick(true)
+    }
+
 
     return (
       <div>
         <div className="header">
           <img className="my-face" src={require("./images/sb1.png")} alt=""/>
-          <p className="month">{month}</p>
-          <p className="day">{day}</p>
-          <p className="year">{year}</p>
-          <Moment className="time" format="hh:mm:ss" interval={500}>
+          <p className="month" id={idTheme}>{month}</p>
+          <p className="day" id={idTheme}>{day}</p>
+          <p className="year" id={idTheme}>{year}</p>
+          <Moment className="time" id={idTheme} format="hh:mm:ss" interval={500}>
           </Moment>
+          <span className="row">
+            <p className="theme-choice">Choose a theme</p><p onClick={onClickTheme} className="theme-choice">NORMAL</p><p onClick={onClickThemeDark} className="theme-choice">DARK</p><p onClick={onClickThemeSpring} className="theme-choice">SPRING</p>
+          </span>
         </div>
 
-        <div className="contact-holder">
+        <div className="contact-holder" id={idTheme}>
           <h1 className="large-6 medium-6 small-12 text-center columns name">Sam Burns</h1>
           <span className="large-6 medium-6 small-12 text-center columns">
             <p className="number">607-592-9072</p>
@@ -96,7 +136,7 @@ class Home extends Component {
           </span>
         </div>
 
-        <div className="row my-bio">
+        <div className="row my-bio" id={idTheme}>
           <p className="columns bio-text">&emsp;Born in Pennsylvania, raised in California, grew up in New York, educated in Pennsylvania, career aspirations in Massachusetts, settled in Maryland.  Switching careers from a business/finance background to the world of Web Development was the most challenging thing I’ve done in my life.  It has also been one of my best decisions I could’ve ever made.<br/><br/>
           &emsp;I’m a huge comic book fan (obviously *TODO link here*), love just about any sport, and also like to read up on many kinds of tech.</p>
         </div>
@@ -138,9 +178,10 @@ class Home extends Component {
             width="520px"
             imagesWidth="500px"
             imagesHeight="250px"
-            imagesHeightMobile="56vw"
+            imagesHeightMobile="44vw"
             thumbnailsWidth="520px"
             thumbnailsHeight="12vw"
+            thumbnailsHeightMobile="12vw"
             infinite="true"
             indicators thumbnails fixedImagesHeight
           />

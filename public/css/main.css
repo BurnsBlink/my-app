@@ -17,13 +17,13 @@
 }
 
 body {
+  font-family: 'Electrolize', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Electrolize', sans-serif;
 }
 
 p {
-    margin: -1px 0px;
+  margin: -1px 0px;
 }
 
 .header {
@@ -39,34 +39,40 @@ p {
 }
 
 .month, .day, .year, .time {
-  position: absolute;
-  font-family: 'Fredoka One', cursive;
   color: var(--main-green);
+  font-family: 'Fredoka One', cursive;
+  position: absolute;
 }
 
+#dark.month, #dark.day, #dark.year, #dark.time { color: var(--main-orange); }
+
 .month {
-  top: 15px;
-  left: 25px;
   font-size: 1.9em;
+  left: 25px;
+  top: 15px;
 }
 
 .day {
-  top: 45px;
-  left: 40px;
   font-size: 1.9em;
+  left: 40px;
+  top: 45px;
 }
 
 .year {
-  top: 34px;
-  left: 80px;
-  transform: rotate(270deg);
   font-size: 1.5em;
+  left: 80px;
+  top: 34px;
+  transform: rotate(270deg);
 }
 
 .time {
-  top: 20px;
-  right: 20px;
   font-size: 1.5em;
+  right: 20px;
+  top: 20px;
+}
+
+.theme-choice {
+  color: var(--main-green);
 }
 
 .contact-holder {
@@ -75,20 +81,25 @@ p {
   padding: 10px 0px;
 }
 
+#dark.contact-holder { background: var(--main-purple); }
+
+#spring.contact-holder { background: var(--main-orange); }
+
+
 .name, .number, .email, .linkedin, .github {
   color: var(--main-white);
 }
 
 .name {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 4em;
   font-family: 'Electrolize', sans-serif;
+  font-size: 4em;
   font-weight: 900;
   text-shadow: 0px 2px 0px var(--2nd-blue),
                0px 10px 10px #232323,
                0px 20px 2px rgba(0,0,0,0.1),
                0px 30px 30px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .linkedin, .github {
@@ -114,6 +125,8 @@ p {
   padding: 10px 0px;
 }
 
+#dark.my-bio { background: var(--dark-grey); color: var(--main-white); padding: 0px 40px; }
+
 .bio-text {
 }
 
@@ -127,9 +140,9 @@ p {
 }
 
 .doc-show {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .doc-hide {
@@ -166,30 +179,30 @@ p {
 
 .project-title {
   font-family: 'Electrolize', sans-serif;
-  margin-top: -30px;
   margin-bottom: 10px;
+  margin-top: -30px;
 }
 
 .project-to-images {
   display: block;
+  height: 0%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  height: 0%;
 }
 
 .project-container {
   background: var(--main-green);
-  margin-top: -30px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: -30px;
   padding-bottom: 80px;
 }
 
 .project-path {
+  border-right: 1px solid black;
   color: var(--main-yellow);
   font-size: 22px;
-  border-right: 1px solid black;
   padding: 0px 30px;
 }
 
@@ -214,6 +227,6 @@ p {
 .logo-title {
   font-family: 'Electrolize', sans-serif;
   color: white;
-  margin-top: -30px;
   margin-bottom: 10px;
+  margin-top: -30px;
 }
