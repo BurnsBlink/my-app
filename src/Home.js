@@ -121,9 +121,9 @@ class Home extends Component {
           <p className="year" id={idTheme}>{year}</p>
           <Moment className="time" id={idTheme} format="hh:mm:ss" interval={500}>
           </Moment>
-          <span className="row">
-            <p className="theme-choice">Choose a theme</p><p onClick={onClickTheme} className="theme-choice">NORMAL</p><p onClick={onClickThemeDark} className="theme-choice">DARK</p><p onClick={onClickThemeSpring} className="theme-choice">SPRING</p>
-          </span>
+          <center className="theme-selectors">
+            <p className="theme-choice" id={idTheme}>Choose a theme:</p><p onClick={onClickTheme} className="theme-normal" id={idTheme}>NORMAL</p><p onClick={onClickThemeDark} className="theme-dark" id={idTheme}>DARK</p><p onClick={onClickThemeSpring} className="theme-spring" id={idTheme}>SPRING</p>
+          </center>
         </div>
 
         <div className="contact-holder" id={idTheme}>
@@ -131,12 +131,12 @@ class Home extends Component {
           <span className="large-6 medium-6 small-12 text-center columns">
             <p className="number">607-592-9072</p>
             <p className="email">samuel.burns.25@gmail.com</p>
-            <p><a className="linkedin" href="https://www.linkedin.com/in/samuel-burns/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
-            <p><a className="github" href="https://github.com/BurnsBlink" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+            <p><a className="linkedin" id={idTheme} href="https://www.linkedin.com/in/samuel-burns/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            <p><a className="github" id={idTheme} href="https://github.com/BurnsBlink" target="_blank" rel="noopener noreferrer">GitHub</a></p>
           </span>
         </div>
 
-        <div className="row my-bio" id={idTheme}>
+        <div className="columns my-bio" id={idTheme}>
           <p className="columns bio-text">&emsp;Born in Pennsylvania, raised in California, grew up in New York, educated in Pennsylvania, career aspirations in Massachusetts, settled in Maryland.  Switching careers from a business/finance background to the world of Web Development was the most challenging thing I’ve done in my life.  It has also been one of my best decisions I could’ve ever made.<br/><br/>
           &emsp;I’m a huge comic book fan (obviously *TODO link here*), love just about any sport, and also like to read up on many kinds of tech.</p>
         </div>
@@ -150,7 +150,7 @@ class Home extends Component {
           </Document>
         </div>
 
-        <div className="text-center projects-holder">
+        <div className="text-center projects-holder" id={idTheme}>
           <h1 className="columns project-title">{"Here are some projects that I've worked on"}</h1>
           <span className="">
             <a className="project-path" href="https://flipdog.herokuapp.com" target="_blank" rel="noopener noreferrer">Flipdog</a>
@@ -160,7 +160,7 @@ class Home extends Component {
           </span>
         </div>
 
-        <div className="project-container">
+        <div className="project-container" id={idTheme}>
           <span className="project-to-images">
             <Fade
               images={projectImages}

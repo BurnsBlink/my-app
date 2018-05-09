@@ -2,18 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 :root {
+  /*NORMAL THEME*/
     --main-blue: #2B4E72;
-    --2nd-blue: #2790B0;
-    --main-red: #E32D40;
+    --main-green: #59B390;
     --main-yellow: #FFC52C;
-    --main-white: #f0f0f0;
+    --main-red: #E32D40;
+  /*DARK THEME*/
     --main-grey: #4E4D4A;
     --dark-grey: #353432;
     --main-purple: #5F5AA2;
+    --2nd-purple: #C6D8FF;
+  /*SPRING THEME*/
     --main-orange: #FA4B00;
-    --main-green: #59B390;
+    --2nd-blue: #2790B0;
     --2nd-green: #BDEB07;
     --main-pink: #F31578;
+    --2nd-yellow: #FFFD77;
+  /*UNIVSERAL USES*/
+    --main-white: #f0f0f0;
 }
 
 body {
@@ -26,6 +32,10 @@ p {
   margin: -1px 0px;
 }
 
+/* ************************************* */
+
+/* Top section of header and IMG-my-face */
+
 .header {
   background: url('../constants/mainblack.png');
   padding: 10px;
@@ -36,6 +46,7 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 10px;
 }
 
 .month, .day, .year, .time {
@@ -44,7 +55,8 @@ p {
   position: absolute;
 }
 
-#dark.month, #dark.day, #dark.year, #dark.time { color: var(--main-orange); }
+#dark.month, #dark.day, #dark.year, #dark.time { color: var(--2nd-purple); }
+#spring.month, #spring.day, #spring.year, #spring.time { color: var(--main-orange); }
 
 .month {
   font-size: 1.9em;
@@ -71,9 +83,38 @@ p {
   top: 20px;
 }
 
-.theme-choice {
+.theme-selectors p {
+  display: inline;
+  padding: 0px 5px;
+}
+
+.theme-choice, .theme-normal, .theme-dark, .theme-spring {
   color: var(--main-green);
 }
+
+
+#dark.theme-choice, #dark.theme-normal, #dark.theme-dark, #dark.theme-spring {
+  color: var(--2nd-purple);
+}
+
+#spring.theme-choice, #spring.theme-normal, #spring.theme-dark, #spring.theme-spring {
+  color: var(--main-orange);
+}
+
+/*cursor hovers for theme*/
+.theme-normal:hover, .theme-dark:hover, .theme-spring:hover {
+  cursor: pointer;
+}
+
+.theme-dark:hover, #spring.theme-dark:hover { color: var(--2nd-purple); }
+
+.theme-spring:hover, #dark.theme-spring:hover { color: var(--main-orange); }
+
+#dark.theme-normal:hover, #spring.theme-normal:hover { color: var(--main-green); }
+
+/* ************************************* */
+
+/* 2nd Section of contact info */
 
 .contact-holder {
   background: var(--main-blue);
@@ -82,9 +123,7 @@ p {
 }
 
 #dark.contact-holder { background: var(--main-purple); }
-
-#spring.contact-holder { background: var(--main-orange); }
-
+#spring.contact-holder { background: var(--2nd-blue); }
 
 .name, .number, .email, .linkedin, .github {
   color: var(--main-white);
@@ -106,12 +145,14 @@ p {
   color: var(--main-yellow);
 }
 
-.github:hover {
+#spring.linkedin, #spring.github { color: var(--2nd-yellow); }
+
+.github:hover, #spring.github:hover {
   color: black;
   cursor: url('../constants/github.png'), default;
 }
 
-.linkedin:hover {
+.linkedin:hover, #spring.linkedin:hover {
   color: black;
   cursor: url('../constants/linkedin.png'), default;
 }
@@ -120,12 +161,16 @@ p {
   font-size: x-large;
 }
 
+/* ************************************* */
+
+/* 3rd Section of my biography */
+
 .my-bio {
   background: white;
   padding: 10px 0px;
 }
 
-#dark.my-bio { background: var(--dark-grey); color: var(--main-white); padding: 0px 40px; }
+#dark.my-bio { background: var(--dark-grey); color: var(--main-white); }
 
 .bio-text {
 }
@@ -138,6 +183,10 @@ p {
 .bio-img:hover {
   content: url('../constants/captain.png');
 }
+
+/* ************************************* */
+
+/* 4th Section of Resume */
 
 .doc-show {
   align-items: center;
@@ -170,12 +219,19 @@ p {
   cursor: n-resize;
 }
 
+/* ************************************* */
+
+/* 5th Section of Projects and fade images */
+
 .projects-holder {
   background: var(--main-green);
   color: var(--main-white);
   overflow: hidden;
   padding: 50px 0px;
 }
+
+#dark.projects-holder { background: var(--main-grey); }
+#spring.projects-holder { background: var(--main-pink); }
 
 .project-title {
   font-family: 'Electrolize', sans-serif;
@@ -199,12 +255,17 @@ p {
   padding-bottom: 80px;
 }
 
+#dark.project-container { background: var(--main-grey); }
+#spring.project-container { background: var(--main-pink); }
+
 .project-path {
   border-right: 1px solid black;
   color: var(--main-yellow);
   font-size: 22px;
   padding: 0px 30px;
 }
+
+#spring.project-path { color: var(--2nd-yellow); }
 
 .project-path:first-child {
   padding-left: 0px;
@@ -219,6 +280,10 @@ p {
   color: black;
 }
 
+/* ************************************* */
+
+/* 6th Section of logos created and slide images */
+
 .logo-container {
   background: url('../constants/mainblack.png');
   padding-bottom: 40px;
@@ -230,3 +295,5 @@ p {
   margin-bottom: 10px;
   margin-top: -30px;
 }
+
+/* ************************************* */
